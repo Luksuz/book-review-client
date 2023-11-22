@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Col, Button, Offcanvas } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import WriteComment from "./WriteComment";
-import Skeleton from "react-loading-skeleton";
 import handleLike from "../api/LikeApi";
 import { useDispatch } from "react-redux";
 import { /*SendComment*/ deleteComment } from "../api/CommentApi";
@@ -75,11 +74,9 @@ export default function PostCard({ data }) {
         <div className="align-items-center fs-5">
           <p>
             Posted:{" "}
-            {data.created_at ? (
-              new Date(data.created_at).toLocaleString()
-            ) : (
-              <Skeleton />
-            )}
+            {data.created_at &&
+              new Date(data.created_at).toLocaleString()}
+            
           </p>
         </div>
       </div>
