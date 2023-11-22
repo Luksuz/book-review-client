@@ -1,0 +1,19 @@
+html,
+body,
+.login-container {
+  height: 100vh;
+  height: 100%;
+  margin: 0;
+}
+
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("../public/background.webp");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw,
+}

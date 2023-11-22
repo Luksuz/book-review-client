@@ -1,0 +1,42 @@
+import React from "react";
+import { useNavigate } from "react-router-dom";
+
+export default function BottomNav() {
+  const navigate = useNavigate();
+
+  function handleFeedClick() {
+    navigate("/feed");
+  }
+
+  function handleSuggestedClick() {
+    navigate("/suggestedPosts");
+  }
+
+  function handleProfileClick() {
+    navigate("/profile");
+  }
+
+  return (
+    <div
+      style={{ height: "9vh", backgroundColor: "rgba(255,255,255,0.9)" }}
+      className="shadow-lg sticky-bottom d-flex align-items-center"
+    >
+      <div className="d-flex justify-content-around align-items-center w-100">
+        <div className="d-flex flex-column">
+          <img className="" onClick={handleFeedClick} src="/feed.png" alt="Feed" />
+          <p>feed</p>
+        </div>
+
+        <div className="d-flex flex-column">
+          <img onClick={handleSuggestedClick} src="/rating.png" alt="Rating" />
+          <p>suggested</p>
+        </div>
+
+        <div className="d-flex flex-column">
+          <img onClick={handleProfileClick} src="/profile.png" alt="Profile" />
+          <p>profile</p>
+        </div>
+      </div>
+    </div>
+  );
+}
