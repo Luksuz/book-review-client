@@ -1,6 +1,5 @@
 import { useState } from "react";
 import InputGroup from "react-bootstrap/esm/InputGroup";
-import Button from "react-bootstrap/esm/Button";
 import Form from "react-bootstrap/esm/Form";
 import {SendComment} from "../api/CommentApi";
 import { useDispatch } from "react-redux";

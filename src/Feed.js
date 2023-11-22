@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Container, Row } from "react-bootstrap";
+import { Row } from "react-bootstrap";
 import PostCard from "./components/PostCard";
 import handleFeedFetch from "./api/FeedApi";
 import { useSelector, useDispatch } from "react-redux";
@@ -28,6 +28,7 @@ export default function Feed() {
     };
 
     fetchData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {

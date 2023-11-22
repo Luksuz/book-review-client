@@ -1,16 +1,17 @@
 import React, { useState } from "react";
-import { Col, Button, Offcanvas, InputGroup, Form } from "react-bootstrap";
+import { Col, Button, Offcanvas } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import WriteComment from "./WriteComment";
 import Skeleton from "react-loading-skeleton";
 import handleLike from "../api/LikeApi";
 import { useDispatch } from "react-redux";
-import { SendComment, deleteComment } from "../api/CommentApi";
-import { changeComment, removeComment } from "../features/posts/postSlice";
+import { /*SendComment*/ deleteComment } from "../api/CommentApi";
+import { /*changeComment*/ removeComment } from "../features/posts/postSlice";
 import { deletePost } from "../api/PostApi";
 import ".././styles/postCard.css";
 
 export default function PostCard({ data }) {
+  //eslint-disable-next-line
   const [changeComment, setChangeComment] = useState(false);
   const [show, setShow] = useState(false);
   const [likes, setLikes] = useState(data.likes);
@@ -26,11 +27,13 @@ export default function PostCard({ data }) {
     navigate("/" + data.author + "/profile");
   };
 
+  //eslint-disable-next-line
   function handleRemoveComment(comment_id) {
     dispatch(removeComment({ post: data.id, commentId: comment_id }));
     deleteComment(comment_id);
   }
 
+  //eslint-disable-next-line
   function handleCommentChange(comment_id, title, content) {
     dispatch(
       changeComment({
@@ -43,6 +46,7 @@ export default function PostCard({ data }) {
   }
 
   async function handlePostDelete() {
+    //eslint-disable-next-line
     const deletedPost = await deletePost(data.id);
     //dispatch(removePost(post.id));
   }
@@ -94,7 +98,7 @@ export default function PostCard({ data }) {
         {data.content}
       </h3>
 
-      {userId == data.author && (
+      {userId === data.author && (
         <Button variant="danger" onClick={handlePostDelete}>
           Delete
         </Button>
@@ -107,9 +111,10 @@ export default function PostCard({ data }) {
         name="bottom"
         className="h-75 rounded-top-5"
       >
-
         <Offcanvas.Body>
-          <h1 style={{fontSize: "3rem"}} className="text-center fst-italic">{data.author}/{data.title}</h1>
+          <h1 style={{ fontSize: "3rem" }} className="text-center fst-italic">
+            {data.author}/{data.title}
+          </h1>
           <hr />
           {data.comments &&
             data.comments.map((comment) => (
@@ -122,34 +127,36 @@ export default function PostCard({ data }) {
                     height={"10%"}
                     width={"10%"}
                   />
-                  <p style={{fontSize: "3rem"}}>{comment.author}</p>
+                  <p style={{ fontSize: "3rem" }}>{comment.author}</p>
                 </div>
                 <div>
-                  <p className="text-wrap ms-4 fs-1 lh-base">{comment.content}</p>
+                  <p className="text-wrap ms-4 fs-1 lh-base">
+                    {comment.content}
+                  </p>
                 </div>
-                <hr className="w-50"/>
+                <hr className="w-50" />
               </div>
             ))}
-            <div className="d-flex fixed-bottom p-2 shadow-lg rounded-4">
-              <WriteComment postId={data.id}/>
-            </div>
-
+          <div className="d-flex fixed-bottom p-2 shadow-lg rounded-4">
+            <WriteComment postId={data.id} />
+          </div>
         </Offcanvas.Body>
       </Offcanvas>
 
       <div className="d-flex justify-content-center position-absolute bottom-0 start-0 p-3">
-          <a className="ms-2 me-2" href="#" onClick={handleLikeClick}>
-            <img
-              src={likes > data.likes ? "/red-heart.png" : "/white-heart.png"}
-              height={"100%"}
-            />
-          </a>
-          <p className="ms-5 fs-1">{likes}</p>
-       
-          <a className="ms-5 fs-2" onClick={handleCommentShow}>
-            see all comments ({data.comments && data.comments.length})
-          </a>
-        </div>
+        <button className="ms-2 me-2" href="#" onClick={handleLikeClick}>
+          <img
+            src={likes > data.likes ? "/red-heart.png" : "/white-heart.png"}
+            height={"100%"}
+            alt="Like"
+          />
+        </button>
+        <p className="ms-5 fs-1">{likes}</p>
+
+        <button className="ms-5 fs-2" onClick={handleCommentShow}>
+          see all comments ({data.comments && data.comments.length})
+        </button>
+      </div>
     </Col>
   );
 }

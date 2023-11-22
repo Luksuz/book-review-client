@@ -5,7 +5,6 @@ import Home from "./Home";
 import Login from "./Login";
 import Feed from "./Feed";
 import Profile from "./Profile";
-import UserProfile from "./Profile";
 import SuggestedPosts from "./SuggestedPosts";
 import SuggestedPeople from "./SuggestedUsers";
 
@@ -15,7 +14,7 @@ function App() {
     <div>
       <Router>
         <Routes>
-          <Route index path="/home" element={<Home />} />
+          <Route index element={<Home />} />
           <Route path="/register" element={<Registration />} />
           <Route path="/login" element={<Login />} />
           <Route path="/feed" element={<Feed />} />

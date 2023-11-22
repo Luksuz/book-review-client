@@ -7,7 +7,7 @@ import handleFollow from "../api/FollowUserApi";
 export default function UserCard({ data }) {
   const [profile, setProfile] = useState(null);
   
-  const [newPost, setNewPost] = useState(null);
+  //const [newPost, setNewPost] = useState(null);
   const userId = localStorage.getItem("user_id");
 
   useEffect(() => {
@@ -43,6 +43,7 @@ export default function UserCard({ data }) {
               width={"25%"}
               className="img-fluid rounded-circle position-absolute"
               src="/user.png"
+              alt="User"
             />
           </div>
 
@@ -51,7 +52,7 @@ export default function UserCard({ data }) {
               <div className="d-flex justify-content-between">
               <p style={{fontSize:"5rem"}}>{profile.username}</p>
               {profile.id !== userId && (
-              <img className="me-5" onClick={handleFollowClick} src={"/follow.png"} height={"8%"} width={"8%"}/>
+              <img className="me-5" onClick={handleFollowClick} src={"/follow.png"} height={"8%"} width={"8%"} alt="follow"/>
             )}
               </div>
               <p style={{fontSize:"3rem"}}>{profile.followers_count} followers</p>
