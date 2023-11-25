@@ -7,6 +7,7 @@ import Feed from "./Feed";
 import Profile from "./Profile";
 import SuggestedPosts from "./SuggestedPosts";
 import SuggestedPeople from "./SuggestedUsers";
+import Settings from "./Settings";
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           <Route path="/:userId/profile" element={<Profile />} />
           <Route path="/suggestedPosts" element={<SuggestedPosts />} />
           <Route path="/suggestedUsers" element={<SuggestedPeople />} />
+          <Route path="/settings" element={<Settings />} />
         </Routes>
       </Router>
     </div>

@@ -27,6 +27,13 @@ export default function Login() {
     });
   }
 
+  const handleDemoClick = () => {
+    localStorage.setItem("username", "root");
+    localStorage.setItem("user_id", 1);
+    localStorage.setItem("token", "7a46228c8929e7ed4f32693bf979b02fdaa0577e");
+    navigate("/feed");
+  };
+
   return (
     <div className="login-container">
       <Form style={{backgroundColor: "#FFFCF9"}} className=" fs-1 w-75 h-25 bordered p-3 bg-light rounded-5 shadow-inset" onSubmit={handleSubmit}>
@@ -58,6 +65,10 @@ export default function Login() {
           Login
         </Button>
       </Form>
+
+      <Button onClick={handleDemoClick}>
+        try Demo
+      </Button>
     </div>
   );
 }

@@ -18,8 +18,8 @@ export default function BottomNav() {
 
   return (
     <div
-      style={{ height: "9vh", backgroundColor: "rgba(255,255,255,0.9)" }}
-      className="shadow-lg sticky-bottom d-flex align-items-center"
+      style={{backgroundColor: "rgba(255,255,255,0.9)" }}
+      className="shadow-lg sticky-bottom d-flex align-items-center p-2"
     >
       <div className="d-flex justify-content-around align-items-center w-100">
         <div className="d-flex flex-column">

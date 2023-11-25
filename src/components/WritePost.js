@@ -1,9 +1,10 @@
 import { useState } from "react";
 import InputGroup from "react-bootstrap/esm/InputGroup";
-import { FormControl } from "react-bootstrap";
+import { FormControl, Col } from "react-bootstrap";
 import Button from "react-bootstrap/esm/Button";
 import { createPost } from "../api/PostApi";
 
+const username = localStorage.getItem("username");
 export default function WritePost() {
   const [newPost, setNewPost] = useState({
     title: "",
@@ -21,11 +22,12 @@ export default function WritePost() {
   }
 
   return (
-    <div>
+    <Col className="d-flex p-5">
       <InputGroup className="mb-3 d-flex flex-column">
-        <InputGroup.Text>
-            Create a Post
-        </InputGroup.Text>
+        <InputGroup.Text className="d-flex">
+            <img src="/user.png" className="img-fluid rounded-circle" height={"8%"} width={"8%"} />
+            <p className="fs-2">{username}</p>
+       </InputGroup.Text>
 
         <FormControl
           placeholder="Write a post title"
@@ -46,11 +48,11 @@ export default function WritePost() {
           value={newPost.content}
           onChange={(e) => setNewPost({ ...newPost, content: e.target.value })}
         />
-        
-      </InputGroup>
-      <Button variant="secondary" onClick={handlePostSubmit}>
-        Send
+         <Button variant="secondary" onClick={handlePostSubmit}>
+        Post
       </Button>
-    </div>
+      </InputGroup>
+     
+    </Col>
   );
 }

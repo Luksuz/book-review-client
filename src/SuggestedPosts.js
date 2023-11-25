@@ -1,6 +1,6 @@
 import PostCard from "./components/PostCard";
 import { useEffect, useState } from "react";
-import { Row } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import fetchSuggestedPosts from "./api/SuggestedPostsApi";
 import Layout from "./components/Layout/Layout";
 
@@ -29,11 +29,10 @@ export default function Suggested() {
     <Layout>
       {posts &&
         posts.map((post) => (
-          <Row
-            className="justify-content-center align-items-center py-4"
-            style={{ height: "27vh" }}
-          >
+          <Row  className="justify-content-center justify-content-md-end align-items-center py-4">
+            <Col md={9}>
             <PostCard key={post.id + 10000} data={post} />
+            </Col>
           </Row>
         ))}
     </Layout>

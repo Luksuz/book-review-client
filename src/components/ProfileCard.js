@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Row, Col } from "react-bootstrap";
+import { Row, Col, Button } from "react-bootstrap";
 import PostCard from "./PostCard";
 import WritePost from "./WritePost";
 import handleFollow from "../api/FollowUserApi";
@@ -27,9 +27,9 @@ export default function UserCard({ data }) {
   };
 
   return (
-    <Col className="border shadow-sm p-2">
+    <div className="d-flex justify-content-end pe-md-3 w-100">
       {profile && (
-        <div className="d-flex flex-column">
+        <div className="d-flex flex-column w-100">
           <div className="position-relative mb-5">
             <img
               style={{ height: "200px", width: "100%", objectFit: "cover" }}
@@ -50,9 +50,12 @@ export default function UserCard({ data }) {
           <div className="mt-5">
             <div className="mt-3">
               <div className="d-flex justify-content-between">
-              <p style={{fontSize:"5rem"}}>{profile.username}</p>
+              <p style={{fontSize:"3rem"}}>{profile.username}</p>
               {profile.id !== userId && (
-              <img className="me-5" onClick={handleFollowClick} src={"/follow.png"} height={"8%"} width={"8%"} alt="follow"/>
+                <Button variant="success" onClick={handleFollowClick} className="d-flex h-50 align-items-center justify-content-center">
+                  <p className="fs-2 text-center">Follow</p>
+                  <img className="me-5 img-fluid" src={"/follow.png"} height={"50%"} width={"50%"} alt="follow"/>
+                </Button>
             )}
               </div>
               <p style={{fontSize:"3rem"}}>{profile.followers_count} followers</p>
@@ -64,7 +67,6 @@ export default function UserCard({ data }) {
                 <Row
                   key={post.id + 1000}
                   className="justify-content-center align-items-center py-4"
-                  style={{ height: "27vh" }}
                 >
                   <PostCard data={post} />
                 </Row>
@@ -72,6 +74,6 @@ export default function UserCard({ data }) {
           </div>
         </div>
       )}
-    </Col>
+    </div>
   );
 }

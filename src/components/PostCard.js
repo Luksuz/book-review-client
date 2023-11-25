@@ -57,43 +57,40 @@ export default function PostCard({ data }) {
   }
 
   return (
-    <Col className="border border-3 mx-5 p-4 bg-light rounded-5 main-shadow h-100 position-relative">
+    <Col className="border border-3 mx-5 p-4 bg-light rounded-5 main-shadow position-relative">
       <div className="d-flex justify-content-between">
         <div className="d-flex align-items-center">
           <img
             className="img-fluid rounded-circle"
             src="/user.png"
             alt="User"
-            height={"12%"}
-            width={"12%"}
+            height={"10%"}
+            width={"10%"}
           />
-          <h1 style={{ fontSize: "3rem" }} className="mx-5">
+          <h1 style={{ fontSize: "2rem" }} className="mx-5">
             {data.author}
           </h1>
         </div>
-        <div className="align-items-center fs-5">
-          <p>
-            Posted:{" "}
-            {data.created_at &&
-              new Date(data.created_at).toLocaleString()}
-            
-          </p>
-        </div>
+
+
       </div>
       <div className="d-flex justify-content-between">
         <h2
-          className="text-secondary py-3 fs-1 fst-italic"
+          className="text-secondary py-3 fs-3 fst-italic"
           onClick={handleProfileClick}
         >
           {data.title}
         </h2>
       </div>
-      <h3
-        style={{ height: "50%", overflowY: "auto" }}
-        className="px-2 text-break fs-1 lh-base"
-      >
-        {data.content}
-      </h3>
+
+      <div style={{ height: "30%", overflowY: "auto" }}>
+        <h3
+          className="px-2 text-break fs-3 lh-base"
+        >
+          {data.content}
+        </h3>
+      </div>
+      
 
       {userId === data.author && (
         <Button variant="danger" onClick={handlePostDelete}>
@@ -109,50 +106,54 @@ export default function PostCard({ data }) {
         className="h-75 rounded-top-5"
       >
         <Offcanvas.Body>
-          <h1 style={{ fontSize: "3rem" }} className="text-center fst-italic">
+          <h1 style={{ fontSize: "2rem" }} className="text-center fst-italic">
             {data.author}/{data.title}
           </h1>
           <hr />
           {data.comments &&
             data.comments.map((comment) => (
-              <div className="d-flex flex-column justify-content-between mb-4">
+              <div className="d-flex flex-column justify-content-between mb-1">
                 <div className="d-flex align-items-center gap-3 mb-4">
                   <img
                     className="img-fluid rounded-circle"
                     src="/user.png"
                     alt="User"
-                    height={"10%"}
-                    width={"10%"}
+                    height={"8%"}
+                    width={"8%"}
                   />
-                  <p style={{ fontSize: "3rem" }}>{comment.author}</p>
+                  <p style={{ fontSize: "2rem" }}>{comment.author}</p>
                 </div>
                 <div>
-                  <p className="text-wrap ms-4 fs-1 lh-base">
+                  <p className="text-wrap ms-4 fs-2 lh-base">
                     {comment.content}
                   </p>
                 </div>
                 <hr className="w-50" />
               </div>
             ))}
-          <div className="d-flex fixed-bottom p-2 shadow-lg rounded-4">
+          <div className="d-flex mb-auto p-2 shadow-lg rounded-4">
             <WriteComment postId={data.id} />
           </div>
         </Offcanvas.Body>
       </Offcanvas>
 
-      <div className="d-flex justify-content-center position-absolute bottom-0 start-0 p-3">
-        <button className="ms-2 me-2" href="#" onClick={handleLikeClick}>
+      <div className="d-flex justify-content-between bottom-0 start-0 p-3">
+        <div className="d-flex">
+        <a href="#" onClick={handleLikeClick}
+>
           <img
             src={likes > data.likes ? "/red-heart.png" : "/white-heart.png"}
-            height={"100%"}
+            height={"60%"}
             alt="Like"
           />
-        </button>
-        <p className="ms-5 fs-1">{likes}</p>
+          </a>
+        <p className="fs-3 ms-3">{likes}</p>
+        </div>
+        
 
-        <button className="ms-5 fs-2" onClick={handleCommentShow}>
+        <a className=" fs-3" onClick={handleCommentShow}>
           see all comments ({data.comments && data.comments.length})
-        </button>
+        </a>
       </div>
     </Col>
   );
