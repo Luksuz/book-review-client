@@ -12,9 +12,9 @@ phases:
 post_build:
   commands:
     - mkdir -p $CODEBUILD_ARTIFACTS_DIR/app
-    - cp -r build/. $CODEBUILD_ARTIFACTS_DIR/app
+    - cp -r build/* $CODEBUILD_ARTIFACTS_DIR/app
 
 artifacts:
   files:
-    - 'buld/.'  
+    - 'build/**/*''  
   name: BuildArtifact
