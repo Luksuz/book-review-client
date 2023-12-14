@@ -1,7 +1,7 @@
 
 
 async function handleRegistration(username, email, password, passwordConfirmation, newsletter) {
-    const response = await fetch('http://localhost:8000/api/register/', {
+    const response = await fetch('http://44.219.26.16:8000/api/register/', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

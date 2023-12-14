@@ -1,7 +1,7 @@
 
 const token = localStorage.getItem('token');
 export default async function handleFollow(followed) {
-    const response = await fetch(`http://localhost:8000/api/follow/`, {
+    const response = await fetch(`http://44.219.26.16:8000/api/follow/`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

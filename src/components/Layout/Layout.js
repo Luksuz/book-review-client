@@ -6,7 +6,7 @@ import SideNav from './SideNav';
 
 
 const Layout = ({ children }) => {
-  const isMobile = useMediaQuery({ maxWidth: 767 }); // Adjust the breakpoint as needed
+  const isMobile = useMediaQuery({ maxWidth: 767 });
 
   return (
     <div style={{ flexDirection: 'column', minHeight: '100vh' }}>

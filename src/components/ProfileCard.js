@@ -49,16 +49,16 @@ export default function UserCard({ data }) {
 
           <div className="mt-5">
             <div className="mt-3">
-              <div className="d-flex justify-content-between">
+              <div className="d-flex justify-content-between mx-2">
               <p style={{fontSize:"3rem"}}>{profile.username}</p>
               {profile.id !== userId && (
                 <Button variant="success" onClick={handleFollowClick} className="d-flex h-50 align-items-center justify-content-center">
-                  <p className="fs-2 text-center">Follow</p>
-                  <img className="me-5 img-fluid" src={"/follow.png"} height={"50%"} width={"50%"} alt="follow"/>
+                  <p className="fs-s text-center">Follow</p>
+                  <img className="img-fluid" src={"/follow.png"} height={"50%"} width={"50%"} alt="follow"/>
                 </Button>
             )}
               </div>
-              <p style={{fontSize:"3rem"}}>{profile.followers_count} followers</p>
+              <p className="ms-2" style={{fontSize:"3rem"}}>{profile.followers_count} followers</p>
             </div>
             
             {profile.id === userId && <WritePost />}

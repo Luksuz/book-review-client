@@ -7,7 +7,8 @@ export default function Home(){
             backgroundRepeat: 'no-repeat', // Prevents repeating the image
             backgroundSize: 'cover', // Ensures that the background covers the entire div
           }}>
-          {/* Content goes here */}
+          Login to see your feed
+          Registration is not yet available
         </div>
     )
 }

@@ -33,13 +33,13 @@ export default function Registration() {
     <div className="login-container">
       <Form
         style={{ backgroundColor: "#FFFCF9" }}
-        className="fs-1 w-75 h-50 bordered p-3 bg-light rounded-5 shadow-inset"
+        className="fs-3 m-3 my-5 bordered p-3 bg-light rounded-5 shadow-inset"
         onSubmit={handleSubmit}
       >
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Username</Form.Label>
           <Form.Control
-            className="fs-1"
+            className="fs-3"
             type="username"
             placeholder="Enter username"
             value={username}
@@ -53,7 +53,7 @@ export default function Registration() {
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
           <Form.Control
-            className="fs-1"
+            className="fs-3"
             type="email"
             placeholder="Enter email"
             value={email}
@@ -64,7 +64,7 @@ export default function Registration() {
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Label>Password</Form.Label>
           <Form.Control
-            className="fs-1"
+            className="fs-3"
             type="password"
             placeholder="Password"
             value={password}
@@ -75,7 +75,7 @@ export default function Registration() {
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Label>Confirm password</Form.Label>
           <Form.Control
-            className="fs-1"
+            className="fs-3"
             type="password"
             placeholder="Password"
             value={passwordConfirmation}
@@ -91,7 +91,7 @@ export default function Registration() {
             onChange={(e) => setNewsletter(e.target.value)}
           />
         </Form.Group>
-        <Button className="w-100 fs-1" variant="primary" type="submit">
+        <Button className="w-100 fs-3" variant="primary" type="submit">
           Register
         </Button>
       </Form>

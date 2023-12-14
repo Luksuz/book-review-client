@@ -1,6 +1,6 @@
 export default async function handleFeedFetch(token, id) {
   try {
-    const response = await fetch(`http://localhost:8000/api/get_followed_posts/`, {
+    const response = await fetch(`http://44.219.26.16:8000/api/get_followed_posts/`, {
       headers: {
         Authorization: `Token ${token}`,
       }

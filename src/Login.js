@@ -35,12 +35,13 @@ export default function Login() {
   };
 
   return (
-    <div className="login-container">
-      <Form style={{backgroundColor: "#FFFCF9"}} className=" fs-1 w-75 h-25 bordered p-3 bg-light rounded-5 shadow-inset" onSubmit={handleSubmit}>
+    <>
+    <div className="login-container d-flex flex-column">
+      <Form style={{backgroundColor: "#FFFCF9"}} className="fs-1 bordered p-2 m-2 bg-light rounded-5 shadow-inset" onSubmit={handleSubmit}>
         <Form.Group controlId="formBasicEmail">
           <Form.Label>Username</Form.Label>
           <Form.Control
-            className="fs-1"
+            className="fs-3"
             type="username"
             placeholder="Enter username"
             value={username}
@@ -50,25 +51,25 @@ export default function Login() {
             We'll never share your email with anyone else.
           </Form.Text>
         </Form.Group>
-
-        <Form.Group className="mt-5" controlId="formBasicPassword">
+        <Form.Group className="" controlId="formBasicPassword">
           <Form.Label>Password</Form.Label>
           <Form.Control
-            className="fs-1"
+            className="fs-3"
             type="password"
             placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
         </Form.Group>
-        <Button className="w-100 fs-1" variant="primary" type="submit">
+        <Button className="w-100 fs-3" variant="primary" type="submit">
           Login
         </Button>
       </Form>
-
       <Button onClick={handleDemoClick}>
-        try Demo
-      </Button>
+     try Demo
+   </Button>
     </div>
+     
+   </>
   );
 }

@@ -4,7 +4,7 @@ export const createPost = async(author, title, content) => {
     console.log(author);    
     console.log(title);
     console.log(content);
-    const response = await fetch('http://localhost:8000/api/create_post/', {
+    const response = await fetch('http://44.219.26.16:8000/api/create_post/', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -22,7 +22,7 @@ export const createPost = async(author, title, content) => {
 }
 
 export const deletePost = async(post_id) => {
-    const response = await fetch(`http://localhost:8000/api/delete_post/${post_id}`, {
+    const response = await fetch(`http://44.219.26.16:8000/api/delete_post/${post_id}`, {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json',

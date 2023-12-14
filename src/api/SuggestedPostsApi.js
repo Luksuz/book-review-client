@@ -1,7 +1,7 @@
 
 const token = localStorage.getItem('token');
 export default async function fetchSuggestedPosts(userId) {
-    const response = await fetch(`http://localhost:8000/api/suggested_posts/`,
+    const response = await fetch(`http://44.219.26.16:8000/api/suggested_posts/`,
     {
         method: 'GET',
         headers: {

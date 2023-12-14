@@ -57,7 +57,7 @@ export default function PostCard({ data }) {
   }
 
   return (
-    <Col className="border border-3 mx-5 p-4 bg-light rounded-5 main-shadow position-relative">
+    <Col className="border border-3 mx-4 p-3 bg-light rounded-5 main-shadow position-relative">
       <div className="d-flex justify-content-between">
         <div className="d-flex align-items-center">
           <img
@@ -137,8 +137,8 @@ export default function PostCard({ data }) {
         </Offcanvas.Body>
       </Offcanvas>
 
-      <div className="d-flex justify-content-between bottom-0 start-0 p-3">
-        <div className="d-flex">
+      <div className="d-flex justify-content-between bottom-0 start-0">
+        <div className="d-flex ">
         <a href="#" onClick={handleLikeClick}
 >
           <img
@@ -151,8 +151,10 @@ export default function PostCard({ data }) {
         </div>
         
 
-        <a className=" fs-3" onClick={handleCommentShow}>
+        <a onClick={handleCommentShow}>
+          <p className="fs-5">
           see all comments ({data.comments && data.comments.length})
+          </p>
         </a>
       </div>
     </Col>
