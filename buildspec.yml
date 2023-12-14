@@ -18,3 +18,4 @@ artifacts:
   files:
     - 'build/**/*'
   name: BuildArtifact
+  base-directory: build
