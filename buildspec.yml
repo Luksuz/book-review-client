@@ -8,9 +8,8 @@ phases:
       - "npm run build"
 post_build:
   commands:
-    - mkdir -p $CODEBUILD_ARTIFACTS_DIR/app  # Create a folder for artifacts
-    - cp -r build/* $CODEBUILD_ARTIFACTS_DIR/app  # Copy build output to the artifacts folder
-
+    - mkdir -p $CODEBUILD_ARTIFACTS_DIR/app  
+    - cp -r build/* $CODEBUILD_ARTIFACTS_DIR/app 
 artifacts:
   files: '**/*'
   name: BuildArtifact
