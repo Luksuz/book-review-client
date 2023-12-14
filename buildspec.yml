@@ -4,14 +4,14 @@ phases:
   build:
     commands:
       - echo "Building book-reviews application"
+      - "npm install"
+      - "npm run build"
 post_build:
   commands:
     - mkdir -p $CODEBUILD_ARTIFACTS_DIR/app  # Create a folder for artifacts
-    - cp -r * $CODEBUILD_ARTIFACTS_DIR/app  # Copy files to the artifacts folder
+    - cp -r build/* $CODEBUILD_ARTIFACTS_DIR/app  # Copy build output to the artifacts folder
 
 artifacts:
   files: '**/*'
   name: BuildArtifact
-  secondary-artifacts: # Add this section
-    books:
-      files: '**/*'
+
