@@ -16,6 +16,6 @@ post_build:
 
 artifacts:
   files:
-    - 'build/**/*'  # Include the contents of the 'app' directory
+    - 'app/**/*'  # Include the contents of the 'app' directory
   name: BuildArtifact
   base-directory: build  # Set the base directory for artifacts
