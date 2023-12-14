@@ -4,16 +4,18 @@ phases:
   pre_build:
     commands:
       - echo "Installing dependencies"
-      - "npm install"
+      - npm install
   build:
     commands:
       - echo "Building book-reviews application"
-      - "npm run build"
+      - npm run build
 post_build:
   commands:
-    - mkdir -p $CODEBUILD_ARTIFACTS_DIR/app  
-    - cp -r build/. $CODEBUILD_ARTIFACTS_DIR/app 
+    - mkdir -p $CODEBUILD_ARTIFACTS_DIR/app
+    - cp -r build/. $CODEBUILD_ARTIFACTS_DIR/app
+
 artifacts:
   files:
     - 'build/**/*'  # Include the contents of the 'app' directory
   name: BuildArtifact
+  base-directory: build  # Set the base directory for artifacts
