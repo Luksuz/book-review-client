@@ -15,5 +15,5 @@ post_build:
     - cp -r build/* $CODEBUILD_ARTIFACTS_DIR/app 
 artifacts:
   files:
-    - 'app/**/*'  # Include the contents of the 'app' directory
+    - 'build/**/*'  # Include the contents of the 'app' directory
   name: BuildArtifact
