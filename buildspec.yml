@@ -16,6 +16,6 @@ post_build:
 
 artifacts:
   files:
-    - 'app/**/*' 
+    - 'app/**/*'  # Include all files and directories under 'app'
   name: BuildArtifact
-  base-directory: app 
+  base-directory: $CODEBUILD_ARTIFACTS_DIR  # Set the base directory for artifacts to the CodeBuild artifacts directory
