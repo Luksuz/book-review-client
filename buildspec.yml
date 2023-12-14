@@ -3,7 +3,15 @@ version: 0.2
 phases:
   build:
     commands:
-      - echo "Building your application"
+      - echo "Building book-reviews application"
+post_build:
+  commands:
+    - mkdir -p $CODEBUILD_ARTIFACTS_DIR/app  # Create a folder for artifacts
+    - cp -r * $CODEBUILD_ARTIFACTS_DIR/app  # Copy files to the artifacts folder
 
 artifacts:
   files: '**/*'
+  name: BuildArtifact
+  secondary-artifacts: # Add this section
+    books:
+      files: '**/*'
