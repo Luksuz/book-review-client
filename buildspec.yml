@@ -16,6 +16,6 @@ post_build:
 
 artifacts:
   files:
-    - 'build/**/*'
+    - '**/*'
   name: BuildArtifact
   base-directory: build
