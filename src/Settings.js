@@ -6,8 +6,8 @@ export default function Settings() {
   const [activeTab, setActiveTab] = useState("change username");
   return (
     <Layout>
-      <Row className="d-flex justify-content-end">
-        <Col sm={3} md={2} className="d-flex flex-column text-center justify-content-between rounded-3 shadow-lg bg-secondary">
+      <Row style={{height:"65vh"}} className="d-flex justify-content-end">
+        <Col sm={3} md={2} className="d-flex flex-column text-center justify-content-around rounded-3 shadow-lg bg-secondary">
           <div onClick={() => setActiveTab("change username")}>
             <h1>Change profile</h1>
           </div>
@@ -19,7 +19,6 @@ export default function Settings() {
           <div onClick={() => setActiveTab("delete account")}>
             <h1>Delete account</h1>
           </div>
-          <hr />
         </Col>
         <Col sm={9} md={7} className="p-5">
           {(() => {

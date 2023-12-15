@@ -34,24 +34,24 @@ export default function UpperNav() {
       className="shadow-lg sticky-top d-flex align-items-center d-flex justify-content-around w-100"
     >
       <Col
-        className="d-flex justify-content-center align-items-center"
+        className="d-flex justify-content-center align-items-center text-center"
         style={isActive("/feed") ? activeLinkStyle : {}}
       >
-        <h1 onClick={handleFeedClick}>Feed</h1>
+        <p onClick={handleFeedClick}>Suggested posts</p>
       </Col>
 
       <Col
         className="d-flex justify-content-center align-items-center"
         style={isActive("/suggestedPosts") ? activeLinkStyle : {}}
       >
-        <h1 onClick={handleSuggestedClick}>Suggested</h1>
+        <p onClick={handleSuggestedClick}>Suggeted posts</p>
       </Col>
 
       <Col
         className="d-flex justify-content-center align-items-center"
         style={isActive("/profile") ? activeLinkStyle : {}}
       >
-        <h1 onClick={handleProfileClick}>Profile</h1>
+        <p onClick={handleProfileClick}>settings</p>
       </Col>
     </Row>
   );

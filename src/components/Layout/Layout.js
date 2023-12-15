@@ -9,7 +9,7 @@ const Layout = ({ children }) => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
 
   return (
-    <div style={{ flexDirection: 'column', minHeight: '100vh' }}>
+    <div style={{ flexDirection: 'column', minHeight: '100vh'}}>
       {isMobile && <UpperNav />}
       {!isMobile && <SideNav />}
       <div>{children}</div>
