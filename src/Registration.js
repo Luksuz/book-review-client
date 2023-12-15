@@ -45,7 +45,7 @@ export default function Registration() {
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
-          <Form.Text className="text-muted">
+          <Form.Text className="text-muted fs-5">
             We'll never share your email with anyone else.
           </Form.Text>
         </Form.Group>
@@ -83,7 +83,7 @@ export default function Registration() {
           />
         </Form.Group>
 
-        <Form.Group className="mb-3" controlId="formBasicCheckbox">
+        <Form.Group className="mb-3 fs-5" controlId="formBasicCheckbox">
           <Form.Check
             type="checkbox"
             label="I want to recieve latest news and feature updates."
