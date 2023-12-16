@@ -6,16 +6,16 @@ export default function UpperNav() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  function handleFeedClick() {
-    navigate("/feed");
+  function handleSuggestedUsersClick() {
+    navigate("/suggestedUsers");
   }
 
-  function handleSuggestedClick() {
+  function handleSuggestedPostsClick() {
     navigate("/suggestedPosts");
   }
 
-  function handleProfileClick() {
-    navigate("/profile");
+  function handleSettingsClick() {
+    navigate("/settings");
   }
 
   const isActive = (path) => location.pathname === path;
@@ -31,27 +31,27 @@ export default function UpperNav() {
         height: "10vh",
         backgroundColor: "rgba(255,255,255,0.9)",
       }}
-      className="shadow-lg sticky-top d-flex align-items-center d-flex justify-content-around w-100"
+      className="shadow-lg sticky-top d-flex align-items-center d-flex justify-content-around w-100vh"
     >
       <Col
         className="d-flex justify-content-center align-items-center text-center"
-        style={isActive("/feed") ? activeLinkStyle : {}}
+        style={isActive("/suggestedUsers") ? activeLinkStyle : {}}
       >
-        <p onClick={handleFeedClick}>Suggested posts</p>
+        <p onClick={handleSuggestedUsersClick}>Suggested users</p>
       </Col>
 
       <Col
         className="d-flex justify-content-center align-items-center"
         style={isActive("/suggestedPosts") ? activeLinkStyle : {}}
       >
-        <p onClick={handleSuggestedClick}>Suggeted posts</p>
+        <p onClick={handleSuggestedPostsClick}>Suggeted posts</p>
       </Col>
 
       <Col
         className="d-flex justify-content-center align-items-center"
-        style={isActive("/profile") ? activeLinkStyle : {}}
+        style={isActive("/settings") ? activeLinkStyle : {}}
       >
-        <p onClick={handleProfileClick}>settings</p>
+        <p onClick={handleSettingsClick}>settings</p>
       </Col>
     </Row>
   );
