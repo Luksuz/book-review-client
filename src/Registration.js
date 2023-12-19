@@ -94,7 +94,11 @@ export default function Registration() {
         <Button className="w-100 fs-3" variant="primary" type="submit">
           Register
         </Button>
+        <hr></hr>
+        <p>Have an account?</p>
+        <Button onClick={() => navigate("/login")} variant="secondary" className="fs-3">Login</Button>
       </Form>
+
     </div>
   );
 }

@@ -64,7 +64,13 @@ export default function Login() {
         <Button className="w-100 fs-3" variant="primary" type="submit">
           Login
         </Button>
+        <hr />
+      <p className="fs-3">Don't have an account?</p>
+      <Button className="w-25 fs-3" variant="secondary" onClick={() => navigate("/")}>
+        Register
+      </Button>
       </Form>
+     
       <Button onClick={handleDemoClick}>
      try Demo
    </Button>
